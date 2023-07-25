@@ -14,6 +14,7 @@ export interface IPluginData {
   addedDate: string;
   isNew: boolean;
   order?: number;
+  children?: React.ReactNode;
 }
 
 const defaultIconUrl = 'img/logo-gradient-on-dark.svg';

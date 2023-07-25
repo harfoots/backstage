@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-import React, { useEffect, useState } from 'react';
+import React, { useInsertionEffect, useState } from 'react';
 
 import hubSpotStyles from './hubSpotNewAdoptersForm.module.scss';
 
 export const HubSpotNewAdoptersForm = () => {
   const [isClosed, setClosed] = useState(true);
 
-  useEffect(() => {
+  useInsertionEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://js.hsforms.net/forms/v2.js';
     document.body.appendChild(script);
