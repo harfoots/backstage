@@ -11,6 +11,7 @@ export interface IOnDemandData {
   youtubeImgUrl: string;
   rsvpUrl: string;
   eventUrl: string;
+  children?: React.ReactNode;
 }
 
 export const OnDemandCard = ({
