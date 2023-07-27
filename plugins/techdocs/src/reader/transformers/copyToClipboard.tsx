@@ -15,7 +15,7 @@
  */
 
 import React, { useState, useCallback } from 'react';
-import ReactDom from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import {
   withStyles,
   Theme,
@@ -91,11 +91,11 @@ export const copyToClipboard = (theme: Theme): Transformer => {
       const text = code.textContent || '';
       const container = document.createElement('div');
       code?.parentElement?.prepend(container);
-      ReactDom.render(
+      const root = createRoot(container);
+      root.render(
         <ThemeProvider theme={theme}>
           <CopyToClipboardButton text={text} />
-        </ThemeProvider>,
-        container,
+        </ThemeProvider>
       );
     }
     return dom;
