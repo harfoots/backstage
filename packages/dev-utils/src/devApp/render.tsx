@@ -45,7 +45,7 @@ import {
 import { Box } from '@material-ui/core';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
 import React, { ComponentType, ReactNode, PropsWithChildren } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { createRoutesFromChildren, Route } from 'react-router-dom';
 import { SidebarThemeSwitcher } from './SidebarThemeSwitcher';
 
@@ -240,7 +240,9 @@ export class DevAppBuilder {
       window.location.pathname = this.defaultPage;
     }
 
-    ReactDOM.render(<DevApp />, document.getElementById('root'));
+    const container = document.getElementById('root');
+    const root = createRoot(container);
+    root.render(<DevApp />);
   }
 }
 
